@@ -4,32 +4,31 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "../ui/button";
 import InfiniteCarousel, { Project } from "../ui/carousel";
-import { ArrowRight } from "lucide-react";
 
 // Data Dummy
 const projects: Project[] = [
   {
     id: 1,
-    title: "Zyricon Dashboard",
-    category: "AI Assistant",
-    description: "A centralized command center powered by advanced AI to streamline workflow automation and predictive analytics for enterprise clients.",
-    image: "/images/project-1.png", 
+    title: "Renotake Web App",
+    category: "AI PropTech",
+    description: "An AI-powered platform designed to empower homeowners with accurate renovation cost estimates and intelligent budget planning. It streamlines the home improvement journey by analyzing project requirements to provide transparent financial projections.",
+    image: "/images/project-3.png", 
     stats: [
-        { label: "Timeline", value: "3 Months" },
+        { label: "Timeline", value: "Ongoing" },
         { label: "Role", value: "Full Stack" },
-        { label: "Tech", value: "Next.js 14" },
+        { label: "Tech", value: "Next.js" },
     ]
   },
   {
     id: 2,
-    title: "FinTech Mobile App",
-    category: "Mobile Application",
-    description: "Secure and intuitive mobile banking experience featuring biometric authentication and real-time transaction processing.",
-    image: "/images/project-1.png",
+    title: "Essen Web App",
+    category: "E-Commerce Website",
+    description: "A comprehensive e-commerce platform offering a curated collection of premium home furnishings, including beds, lighting, and seating. The site delivers a seamless shopping experience with intuitive navigation designed to elevate modern living spaces.",
+    image: "/images/project-2.png",
     stats: [
-        { label: "Timeline", value: "6 Months" },
-        { label: "Role", value: "Mobile Dev" },
-        { label: "Tech", value: "React Native" },
+        { label: "Timeline", value: "1 Months" },
+        { label: "Role", value: "Full Stack" },
+        { label: "Tech", value: "Next.js" },
     ]
   },
   {
@@ -133,7 +132,7 @@ export default function SectionTwo() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:pr-12">
         
-        {/* Header Section (Animated) */}
+        {/* Header Section */}
         <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -141,10 +140,10 @@ export default function SectionTwo() {
             variants={staggerContainer}
             className="text-center mb-2"
         >
-            <motion.div variants={fadeUp} className="inline-block mb-4 text-sm font-medium text-zinc-400">
+            <motion.div variants={fadeUp} className="inline-block mb-4 text-md font-medium text-zinc-400">
                 [ our works ]
             </motion.div>
-            <motion.h2 variants={fadeUp} className="text-3xl font-semibold leading-tight text-white md:text-5xl">
+            <motion.h2 variants={fadeUp} className="text-3xl font-display font-semibold leading-tight text-white md:text-5xl">
                 Delivering Impact <br />
                 <span className="text-zinc-500">Through Technology.</span>
             </motion.h2>
@@ -165,7 +164,6 @@ export default function SectionTwo() {
                     {selectedProject ? (
                         <motion.div
                             key={selectedProject.id}
-                            // Animation: Slide Up smooth saat ganti konten
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
@@ -202,7 +200,7 @@ export default function SectionTwo() {
                             </div>
                         </motion.div>
                     ) : (
-                        /* EMPTY STATE (Animated) */
+                        /* EMPTY STATE */
                         <motion.div 
                             key="empty"
                             initial={{ opacity: 0, x: -20 }} 
@@ -211,7 +209,7 @@ export default function SectionTwo() {
                             transition={{ duration: 0.5, ease: "easeOut" }}
                             className="w-full flex flex-col justify-center h-full text-white space-y-4 border-l border-zinc-900 pl-6"
                         >
-                            <h3 className="text-3xl font-semibold">
+                            <h3 className="text-3xl font-display font-semibold">
                                 Explore our portfolio
                             </h3>
                             <p className="max-w-sm text-zinc-500">
@@ -242,7 +240,7 @@ export default function SectionTwo() {
 
         </motion.div>
 
-        {/* Bottom Centered Button (Animated) */}
+        {/* Bottom Centered Button */}
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

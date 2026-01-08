@@ -42,7 +42,7 @@ export default function SectionHero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl font-semibold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
+                    className="text-4xl font-display font-semibold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
                 >
                     We build custom <br />
                     software that helps <br />

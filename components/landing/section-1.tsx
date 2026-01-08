@@ -16,13 +16,13 @@ const services = [
   {
     title: "Custom Web & Mobile Development",
     description: "Building high-performance, scalable web and mobile applications tailored to your specific business requirements.",
-    tags: "React · Next.js · React Native · Node.js",
+    tags: "Web Apps · Mobile Apps · SaaS Platforms",
     isOpenDefault: false
   },
   {
     title: "Cloud, DevOps & Support",
-    description: "Ensure your infrastructure is secure, scalable, and automated with our comprehensive DevOps services.",
-    tags: "AWS · Docker · CI/CD · Maintenance",
+    description: "Ensure your infrastructure is secure, scalable, deployed, and automated with our comprehensive DevOps services.",
+    tags: "Cloud Infrastructure · DevOps · Ongoing Maintenance",
     isOpenDefault: false
   }
 ];
@@ -61,7 +61,7 @@ export default function SectionOne() {
                initial={{ opacity: 0, x: 20 }}
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: true }}
-               className="mb-6 text-sm font-medium text-zinc-400"
+               className="mb-6 text-md font-medium text-zinc-400"
             >
                [ what we do ]
             </motion.div>
@@ -72,7 +72,7 @@ export default function SectionOne() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.2 }}
-               className="mb-12 text-4xl font-semibold leading-tight md:text-5xl"
+               className="mb-12 text-4xl font-display font-semibold leading-tight md:text-5xl"
             >
               End-to-end Software <br />
               Development.

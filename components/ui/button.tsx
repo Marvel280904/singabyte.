@@ -16,7 +16,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   const baseStyles =
-    "inline-flex h-12 items-center justify-center gap-2 px-6 font-medium transition-all duration-300 active:scale-95 text-sm md:text-base";
+    "inline-flex h-12 items-center justify-center gap-2 px-6 font-display font-medium transition-all duration-300 active:scale-95 text-sm md:text-base";
   
   const variants = {
     primary: "bg-blue hover:bg-[#0033CC] text-white",
