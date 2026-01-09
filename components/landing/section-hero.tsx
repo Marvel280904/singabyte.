@@ -30,7 +30,7 @@ export default function SectionHero() {
       <div className="absolute -left-[10%] top-[20%] z-10 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
 
       {/* Main Content */}
-      <div className="relative z-20 flex h-full flex-col justify-end px-6 pb-12 pt-32 md:px-12 md:pb-16 lg:px-16">
+      <div className="relative z-20 flex h-full flex-col justify-end px-6 pt-32 md:px-12 md:pb-16 lg:px-16">
         <div className="flex h-full flex-col">
             
             {/* Spacer */}

@@ -35,11 +35,11 @@ export default function SectionOne() {
   };
 
   return (
-    <section className="w-full bg-black py-20 text-white">
+    <section className="w-full bg-black md:py-20 text-white">
       <div className="mx-auto max-w-7xl px-6 md:px-2 lg:px-2">
         
         {/* Grid Layout: Desktop (2 cols), Mobile (1 col) */}
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-24">
           
           {/* LEFT SIDE: BOUNCY BLOCKS */}
           <motion.div 
@@ -72,7 +72,7 @@ export default function SectionOne() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.2 }}
-               className="mb-12 text-4xl font-display font-semibold leading-tight md:text-5xl"
+               className="mb-6 md:mb-12 text-4xl font-display font-semibold leading-tight md:text-5xl"
             >
               End-to-end Software <br />
               Development.
@@ -83,7 +83,7 @@ export default function SectionOne() {
               {services.map((item, index) => (
                 <div 
                   key={index} 
-                  className="border-b border-white/10 pb-6 last:border-none"
+                  className="border-b border-white/10 md:pb-6 last:border-none"
                 >
                   <button 
                     onClick={() => toggleAccordion(index)}

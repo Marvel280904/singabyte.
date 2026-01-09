@@ -37,6 +37,18 @@ body {
     0 0 20px 5px rgba(0, 64, 255, 0.3);
 }
 
+@utility shadow-blue-up {
+  box-shadow: 
+    /* Layer 1: Glow kuat menyorot ke ATAS (Y = -5px) */
+    0 -5px 10px 1px rgba(0, 64, 255, 0.9),
+    
+    /* Layer 2: Glow ambient di sekeliling garis */
+    0 0 8px 2px rgba(0, 64, 255, 0.6),
+    
+    /* Layer 3: Inti cahaya putih/biru terang agar garis terlihat menyala */
+    0 0 2px 0px rgba(100, 150, 255, 0.8);
+}
+
 /* ANIMATIONS */
 @keyframes scroll {
   0% { transform: translateX(0); }

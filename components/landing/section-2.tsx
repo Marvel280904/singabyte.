@@ -10,9 +10,9 @@ const projects: Project[] = [
   {
     id: 1,
     title: "Renotake Web App",
-    category: "AI PropTech",
+    category: "Website Application",
     description: "An AI-powered platform designed to empower homeowners with accurate renovation cost estimates and intelligent budget planning. It streamlines the home improvement journey by analyzing project requirements to provide transparent financial projections.",
-    image: "/images/project-3.png", 
+    image: "/images/project-1.png", 
     stats: [
         { label: "Timeline", value: "Ongoing" },
         { label: "Role", value: "Full Stack" },
@@ -33,43 +33,43 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "E-Commerce Analytics",
-    category: "Web Platform",
-    description: "Comprehensive dashboard for tracking sales metrics, inventory management, and customer behavior analysis.",
-    image: "/images/project-1.png",
+    title: "Chain of Advice",
+    category: "FinTech Education",
+    description: "An educational platform providing transparent insights into digital assets while clearly distinguishing informative content from financial advice. It serves as a compliance-focused resource for users to explore market trends without making specific investment recommendations.",
+    image: "/images/project-3.png",
     stats: [
-        { label: "Timeline", value: "4 Months" },
-        { label: "Role", value: "Frontend" },
-        { label: "Tech", value: "Vue.js" },
+        { label: "Timeline", value: "3 Months" },
+        { label: "Role", value: "Full Stack" },
+        { label: "Tech", value: "Next.js" },
     ]
   },
   {
     id: 4,
-    title: "HealthCare System",
-    category: "Enterprise Software",
-    description: "HIPAA-compliant patient management system designed to improve hospital efficiency and patient care coordination.",
-    image: "/images/project-1.png",
+    title: "AE Marine Web",
+    category: "Corporate Website",
+    description: "A professional corporate profile designed for a Singapore-based shipbroker to elevate their digital presence in the energy transportation market. The site features a streamlined layout that effectively showcases their tanker chartering expertise and consultancy services.",
+    image: "/images/project-4.png",
     stats: [
-        { label: "Timeline", value: "1 Year" },
-        { label: "Role", value: "Backend" },
-        { label: "Tech", value: "GoLang" },
+        { label: "Timeline", value: "Ongoing" }, 
+        { label: "Role", value: "Full Stack" },
+        { label: "Tech", value: "Next.js" }, 
     ]
   },
   {
     id: 5,
-    title: "Crypto Exchange",
-    category: "Blockchain",
-    description: "High-frequency trading platform built on blockchain technology ensuring transparency and low-latency execution.",
-    image: "/images/project-1.png", 
+    title: "Renotake Mobile App",
+    category: "Mobile Application",
+    description: "The mobile extension of the Renotake ecosystem, bringing AI-powered renovation cost estimation directly to users' fingertips. It offers homeowners instant, on-the-go access to intelligent budget planning and project assessment tools.",
+    image: "/images/project-5.png", 
     stats: [
-        { label: "Timeline", value: "8 Months" },
-        { label: "Role", value: "Smart Contract" },
-        { label: "Tech", value: "Solidity" },
+        { label: "Timeline", value: "Ongoing" },
+        { label: "Role", value: "Mobile Dev" },
+        { label: "Tech", value: "React Native" }, 
     ]
   },
 ];
 
-// Animation Variants (Agar kode lebih rapi)
+// Animation Variants
 const fadeUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -149,17 +149,17 @@ export default function SectionTwo() {
             </motion.h2>
         </motion.div>
 
-        {/* --- MAIN CONTENT GRID --- */}
+        {/* MAIN CONTENT GRID */}
         <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-[600px]"
+            className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 items-center h-auto lg:h-[600px]"
         >
             
-            {/* LEFT SIDE: DETAILS PANEL */}
-            <div className="lg:col-span-4 h-full relative flex items-center">
+            {/* Left Side: Details Panel */}
+            <div className="lg:col-span-4 h-full relative flex items-center order-2 lg:order-1 pl-4 md:pl-0">
                 <AnimatePresence mode="wait">
                     {selectedProject ? (
                         <motion.div
@@ -179,13 +179,13 @@ export default function SectionTwo() {
                                 {selectedProject.category}
                             </div>
 
-                            {/* Title */}
-                            <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                            {/* Title (Responsive Text Size) */}
+                            <h3 className="text-3xl md:text-5xl font-bold text-white leading-tight">
                                 {selectedProject.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-zinc-400 leading-relaxed text-lg">
+                            <p className="text-zinc-400 leading-relaxed text-base md:text-lg">
                                 {selectedProject.description}
                             </p>
 
@@ -207,13 +207,13 @@ export default function SectionTwo() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="w-full flex flex-col justify-center h-full text-white space-y-4 border-l border-zinc-900 pl-6"
+                            className="w-full flex flex-col justify-center h-full text-white space-y-4 border-l-0 lg:border-l border-zinc-900 pl-0 lg:pl-6 pb-10 lg:pb-0"
                         >
-                            <h3 className="text-3xl font-display font-semibold">
+                            <h3 className="text-2xl md:text-3xl font-display font-semibold">
                                 Explore our portfolio
                             </h3>
-                            <p className="max-w-sm text-zinc-500">
-                                Select a project from the carousel on the right to view details, tech stack, and impact.
+                            <p className="max-w-sm text-zinc-500 text-sm md:text-base">
+                                Select a project from the carousel to view details, tech stack, and impact.
                             </p>
                             <div className="flex items-center gap-4 pt-4">
                                 <motion.div 
@@ -229,8 +229,12 @@ export default function SectionTwo() {
                 </AnimatePresence>
             </div>
 
-            {/* RIGHT SIDE: CAROUSEL */}
-            <div className="lg:col-span-8 w-full h-full overflow-hidden mx-auto flex items-center">
+            {/* Right Side: Carousel */}
+            <div className="lg:col-span-8 w-full h-full overflow-hidden mx-auto flex items-center order-1 lg:order-2 min-h-[400px]">
+                {/* Gradient Fade - Mobile Only */}
+                <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 h-full w-12 bg-gradient-to-r from-black to-transparent block md:hidden" />
+                <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 h-full w-12 bg-gradient-to-l from-black to-transparent block md:hidden" />
+                
                 <InfiniteCarousel 
                     items={projects} 
                     selectedId={selectedProject?.id || null}
@@ -240,13 +244,13 @@ export default function SectionTwo() {
 
         </motion.div>
 
-        {/* Bottom Centered Button */}
+        {/* Bottom: Centered Button */}
         <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex justify-center"
+            className="mt-12 md:mt-0 flex justify-center"
         >
              <Button variant="primary">
                 view all projects
