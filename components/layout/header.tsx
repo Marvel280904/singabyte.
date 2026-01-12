@@ -50,7 +50,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="relative h-9 w-28 md:w-32 flex items-center">
-                <div className="text-2xl md:text-3xl font-bold text-white tracking-tighter">
+                <div className="text-2xl md:text-3xl font-display font-bold text-white tracking-tighter">
                     singabyte<span className="text-blue">.</span>
                 </div>
             </Link>

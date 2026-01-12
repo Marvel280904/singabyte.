@@ -124,7 +124,6 @@ export default function SectionTwo() {
                 style={{ 
                     top: star.top, 
                     left: star.left,
-                    boxShadow: '0 0 4px 1px rgba(155, 61, 243, 0.4)' // Purple glow pada bintang
                 }}
             />
         ))}

@@ -191,7 +191,7 @@ function ProjectCard({
             onClick();
         }}
         className={cn(
-            "relative shrink-0 w-[360px] md:w-[550px] h-[250px] md:h-[400px] bg-black border transition-all duration-500 group/card cursor-pointer flex flex-col",
+            "relative shrink-0 w-[330px] md:w-[550px] h-[230px] md:h-[400px] bg-black border transition-all duration-500 group/card cursor-pointer flex flex-col",
             isSelected 
                 ? "border-blue z-20 shadow-blue-neon scale-100" 
                 : "border-zinc-800 opacity-70 hover:opacity-100 hover:border-zinc-600 hover:shadow-[0_0_40px_-10px_rgba(0,64,255,0.4)]"

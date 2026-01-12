@@ -3,6 +3,7 @@
 @theme {
   /* Colors */
   --color-blue: #0040FF;
+  --color-purple: #f24dff;
   
   /* Font Families */
   --font-sans: var(--font-funnel-sans), ui-sans-serif, system-ui, sans-serif;
@@ -35,6 +36,13 @@ body {
   box-shadow: 
     0 20px 40px -10px rgba(0, 64, 255, 0.7), 
     0 0 20px 5px rgba(0, 64, 255, 0.3);
+}
+
+@utility shadow-purple-neon {
+  box-shadow: 
+    0 0 20px 5px rgba(168, 85, 247, 0.4), /* Layer luar lembut */
+    0 0 40px 10px rgba(168, 85, 247, 0.2), /* Layer lebih luar */
+    inset 0 0 20px 2px rgba(168, 85, 247, 0.1); /* Glow ke dalam */
 }
 
 @utility shadow-blue-up {
@@ -77,3 +85,14 @@ body {
 .delay-500 { animation-delay: 500ms; }
 .delay-700 { animation-delay: 700ms; }
 .delay-1000 { animation-delay: 1000ms; }
+
+
+/* Animasi Bintang Ungu */
+@keyframes twinkle-purple {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.5); box-shadow: 0 0 10px 2px rgba(168, 85, 247, 0.8); }
+}
+
+.animate-twinkle-purple {
+  animation: twinkle-purple 4s infinite ease-in-out;
+}

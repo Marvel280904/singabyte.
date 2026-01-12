@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Funnel_Sans, Funnel_Display } from "next/font/google";
 import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 import { siteMetadata, siteViewport } from "@/config/site";
 
 // Setup Funnel Sans
@@ -37,6 +38,8 @@ export default function RootLayout({
         <Header />
         
         {children}
+
+        <Footer />
       </body>
     </html>
   );
