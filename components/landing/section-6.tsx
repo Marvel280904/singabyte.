@@ -1,10 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function SectionSix() {
+  const router = useRouter();
+  
   return (
     <section className="w-full bg-black py-12 md:py-24 px-4 md:px-6 flex justify-center">
       
@@ -53,7 +56,7 @@ export default function SectionSix() {
           </p>
 
           {/* Button */}
-          <Button variant="primary">
+          <Button variant="primary" onClick={() => router.push('/contact')}>
             contact us
           </Button>
 

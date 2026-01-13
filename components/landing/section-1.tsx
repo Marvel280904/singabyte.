@@ -39,7 +39,7 @@ export default function SectionOne() {
       <div className="mx-auto max-w-7xl px-6 md:px-2 lg:px-2">
         
         {/* Grid Layout: Desktop (2 cols), Mobile (1 col) */}
-        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-24">
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-24" id="service">
           
           {/* LEFT SIDE: BOUNCY BLOCKS */}
           <motion.div 
@@ -47,14 +47,14 @@ export default function SectionOne() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative h-[600px] w-full lg:h-[600px]"
+            className="relative h-[500px] w-full lg:h-[600px]"
           >
             <BouncyCards />
           </motion.div>
 
 
           {/* RIGHT SIDE: CONTENT & ACCORDION */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center mt-12 md:mt-0 lg:mt-0">
             
             {/* Badge */}
             <motion.div 

@@ -92,7 +92,7 @@ const staggerContainer: Variants = {
 export default function SectionTwo() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // State untuk generate bintang secara random di client-side agar tidak mismatch
+  // State untuk generate bintang secara random
   const [stars, setStars] = useState<{ top: string; left: string; delay: string; size: string; opacity: number }[]>([]);
 
   useEffect(() => {
@@ -108,7 +108,7 @@ export default function SectionTwo() {
   }, []);
 
   return (
-    <section className="relative w-full bg-black py-24 md:py-32 overflow-hidden min-h-[900px] flex flex-col justify-center">
+    <section className="relative w-full bg-black py-24 md:py-32 overflow-hidden min-h-[900px] flex flex-col justify-center" id="work">
       
       {/* Background Grid Subtle */}
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 

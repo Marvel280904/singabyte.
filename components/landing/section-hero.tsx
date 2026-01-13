@@ -1,39 +1,38 @@
 "use client";
 
-import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 
 export default function SectionHero() {
+  const router = useRouter();
+
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-blue text-white">
+    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-black text-white">
       
-      {/* Bg Image Container */}
-      <div className="absolute top-0 right-0 z-0 h-full w-full md:w-[80%] lg:w-[65%]">
-        <Image
-          src="/images/bg-hero.png"
-          alt="Singabyte Background"
-          fill
-          className="object-cover object-right opacity-80"
-          priority
-        />
+      {/* BACKGROUND VIDEO */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="h-full w-full object-cover opacity-80 object-[65%] md:object-center"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black" />
       </div>
 
-      {/* Gradient Overlay */}
-      {/* Gradient kiri ke kanan*/}
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-black via-black/50 to-transparent" />
-
-      {/* Gradient atas ke bawah*/}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-black/10 to-black" />
       
-      {/* Glow Effect for Title */}
-      <div className="absolute -left-[10%] top-[20%] z-10 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[120px]" />
-
-      {/* Main Content */}
+      
+      {/* MAIN CONTENT */}
       <div className="relative z-20 flex h-full flex-col justify-end px-6 pt-32 md:px-12 md:pb-16 lg:px-16">
         <div className="flex h-full flex-col">
             
-            {/* Spacer */}
+            {/* Spacer agar text tidak terlalu atas */}
             <div className="h-40 md:h-32"></div>
 
             {/* Title */}
@@ -42,7 +41,7 @@ export default function SectionHero() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl font-display font-semibold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
+                    className="text-4xl font-display font-semibold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl drop-shadow-2xl"
                 >
                     We build custom <br />
                     software that helps <br />
@@ -50,6 +49,7 @@ export default function SectionHero() {
                 </motion.h1>
             </div>
 
+            {/* Bottom Content (Buttons & Description) */}
             <div className="flex flex-col-reverse gap-8 border-t border-white/10 pt-8 md:flex-row md:items-end md:justify-between md:border-none md:pt-0">
                 
                 {/* Bottom Left: Buttons */}
@@ -59,8 +59,12 @@ export default function SectionHero() {
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                     className="flex flex-col gap-4 sm:flex-row"
                 >
-                    <Button variant="primary">start a project</Button>
-                    <Button variant="secondary">view our work</Button>
+                    <Button variant="primary" onClick={() => router.push('/contact')} className="h-12 px-8 text-base">
+                        start a project
+                    </Button>
+                    <Button variant="secondary" onClick={() => router.push('/#work')} className="h-12 px-8 text-base">
+                        view our work
+                    </Button>
                 </motion.div>
 
                 {/* Bottom Right: Subtitle */}
@@ -68,7 +72,7 @@ export default function SectionHero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                    className="max-w-md text-base leading-relaxed text-zinc-400 md:text-right md:text-lg"
+                    className="max-w-md text-base leading-relaxed text-zinc-300 md:text-right md:text-lg"
                 >
                     <p>
                         Singabyte is a Singapore-based software house

@@ -1,13 +1,29 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ArrowUpRight } from "lucide-react";
 
+// KONFIGURASI LINK
+const companyLinks = [
+  { name: "Services", href: "/#service" },
+  { name: "Work", href: "/#work" },
+  { name: "Solution", href: "/#solution" },
+  { name: "Insights", href: "/#insights" },
+];
+
+const socialLinks = [
+  { name: "Twitter", href: "https://twitter.com/singabyte" },
+  { name: "Instagram", href: "https://instagram.com/singabyte" },
+  { name: "LinkedIn", href: "https://linkedin.com/company/singabyte" },
+];
+
 export default function Footer() {
   // Ambil tahun
   const currentYear = new Date().getFullYear();
+  const router = useRouter();
 
   return (
     <footer className="w-full bg-black pt-20 pb-8 border-t border-white/5">
@@ -22,10 +38,10 @@ export default function Footer() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                <Button variant="primary">
+                <Button variant="primary" onClick={() => router.push('/contact')}>
                     start a project
                 </Button>
-                <Button variant="secondary">
+                <Button variant="secondary" onClick={() => router.push('/career')}>
                     careers@singabyte.com
                 </Button>     
             </div>
@@ -66,9 +82,13 @@ export default function Footer() {
                             [ company ]
                         </span>
                         <nav className="flex flex-col gap-4">
-                            {["Services", "Work", "Solution", "Insights"].map((item) => (
-                                <Link key={item} href="#" className="text-zinc-300 hover:text-blue transition-colors text-sm">
-                                    {item}
+                            {companyLinks.map((item, index) => (
+                                <Link 
+                                    key={index} 
+                                    href={item.href}
+                                    className="text-zinc-300 hover:text-blue transition-colors text-sm"
+                                >
+                                    {item.name}
                                 </Link>
                             ))}
                         </nav>
@@ -80,15 +100,16 @@ export default function Footer() {
                             [ social ]
                         </span>
                         <nav className="flex flex-col gap-4">
-                            <Link href="#" className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group">
-                                Twitter <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </Link>
-                            <Link href="#" className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group">
-                                Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </Link>
-                            <Link href="#" className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group">
-                                LinkedIn <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </Link>
+                            {socialLinks.map((item, index) => (
+                                <Link 
+                                    key={index} 
+                                    href={item.href}
+                                    className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group"
+                                >
+                                    {item.name} 
+                                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                </Link>
+                            ))}
                         </nav>
                     </div>
 

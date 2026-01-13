@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { 
@@ -71,6 +72,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 20 }: { items: typeof s
 
 // --- MAIN COMPONENT ---
 export default function SectionFour() {
+  const router = useRouter();
   const containerRef = useRef(null);
   
   // Parallax Effect untuk Background Elements
@@ -162,7 +164,7 @@ export default function SectionFour() {
             transition={{ delay: 0.4 }}
             className="flex flex-col items-center gap-4"
         >
-             <Button variant="primary">
+             <Button variant="primary" onClick={() => router.push('/techstack')}>
                 see all technologies
              </Button>
         </motion.div>

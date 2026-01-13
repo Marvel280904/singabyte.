@@ -38,7 +38,7 @@ export default function SectionFive() {
   };
 
   return (
-    <section className="w-full bg-black py-24 md:py-32 border-t border-white/5">
+    <section className="w-full bg-black py-24 md:py-32 border-t border-white/5" id="insights">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* GRID LAYOUT (2 Kolom) */}
