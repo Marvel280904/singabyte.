@@ -63,7 +63,7 @@ export default function Header() {
           {/* Left Side: Hamburger (Mobile) & Logo */}
           <div className="flex items-center gap-3 justify-start">
               {/* Mobile Hamburger */}
-              <button onClick={() => setIsMobileMenuOpen(true)} className="text-white md:hidden mt-1">
+              <button onClick={() => setIsMobileMenuOpen(true)} className="text-white lg:hidden mt-1">
                   <Menu className="h-6 w-6" />
               </button>
 
@@ -77,7 +77,7 @@ export default function Header() {
 
 
           {/* Center Part: Nav (DESKTOP ONLY) */}
-          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8">
+          <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8">
               {navItems.map((item, index) => (
                   <Link
                   key={index}
@@ -88,8 +88,8 @@ export default function Header() {
                       {/* Span Garis Neon */}
                       <span className={cn(
                           "absolute -bottom-3 left-1/2 -translate-x-1/2 h-[2px] transition-all duration-300 ease-out",
-                          "bg-blue shadow-blue-up",
-                          "w-0 group-hover:w-full"
+                          "bg-blue opacity-0 shadow-blue-up",
+                          "w-0 group-hover:w-full group-hover:opacity-100"
                       )} />
                   </Link>
               ))}

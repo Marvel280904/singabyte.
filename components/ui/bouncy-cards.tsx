@@ -302,7 +302,7 @@ export default function BouncyBlocks() {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-[60vh] md:h-[600px] select-none cursor-crosshair active:cursor-grabbing"
+      className="relative w-full h-[50vh] xl:h-[80vh] select-none cursor-crosshair active:cursor-grabbing"
     >
       <div ref={sceneRef} />
       {/* Frame Visual */}

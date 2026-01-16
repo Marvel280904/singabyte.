@@ -8,7 +8,7 @@ import SectionSix from "@/components/landing/section-6";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen w-full overflow-hidden bg-black">
       <SectionHero />
       <SectionOne />
       <SectionTwo />

@@ -45,13 +45,13 @@ export default function SectionSix() {
           </div>
 
           {/* Title */}
-          <h2 className="text-3xl md:text-5xl lg:text-5xl font-display font-bold text-white leading-tight mb-4">
+          <h2 className="text-3xl lg:text-5xl font-display font-bold text-white leading-tight mb-4">
             Each project we undertake is a <br className="hidden md:block" />
             unique opportunity
           </h2>
 
           {/* Subtitle */}
-          <p className="text-zinc-200 text-md md:text-lg max-w-2xl mb-10 leading-relaxed">
+          <p className="text-zinc-200 text-md lg:text-lg max-w-2xl mb-10 leading-relaxed">
             Ready to take the next step? Join us now and start transforming your vision into reality with expert support.
           </p>
 

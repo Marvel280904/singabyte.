@@ -49,7 +49,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 20 }: { items: typeof s
         
         {/* Masking Gradient (Fade Left & Right) */}
         <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-blue/15 to-transparent blur-[150px] z-10" />
-        <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-purple/15 to-transparent blur-[150px] z-10" />
+        <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-blue/15 to-transparent blur-[150px] z-10" />
 
         <motion.div 
             className="flex gap-4 py-4"
@@ -93,7 +93,7 @@ export default function SectionFour() {
 
       {/* Ambient Glow Biru & Ungu */}
       <motion.div style={{ y: yBg }} className="absolute top-1/4 -left-[200px] w-[800px] h-[800px] bg-blue/15 blur-[150px] rounded-full pointer-events-none" />
-      <motion.div style={{ y: yBg }} className="absolute bottom-0 -right-[200px] w-[800px] h-[800px] bg-purple/15 blur-[150px] rounded-full pointer-events-none" />
+      <motion.div style={{ y: yBg }} className="absolute bottom-0 -right-[200px] w-[800px] h-[800px] bg-blue/15 blur-[150px] rounded-full pointer-events-none" />
 
 
       <div className="relative z-10 w-full max-w-7xl px-6">
@@ -121,7 +121,7 @@ export default function SectionFour() {
                 className="text-2xl md:text-5xl font-display font-bold text-white leading-tight mb-6"
             >
                 The tools, frameworks, and <br className="hidden md:block"/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-purple-600">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-400 to-blue-600">
                     technologies powering our solutions.
                 </span>
             </motion.h2>
@@ -131,7 +131,7 @@ export default function SectionFour() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="text-zinc-400 text-md md:text-lg"
+                className="text-zinc-400 text-sm md:text-lg"
             >
                 We carefully select the best modern technologies to ensure performance, scalability, and security for every project we build.
             </motion.p>

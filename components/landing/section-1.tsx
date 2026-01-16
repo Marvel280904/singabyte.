@@ -35,11 +35,11 @@ export default function SectionOne() {
   };
 
   return (
-    <section className="w-full bg-black md:py-20 text-white">
-      <div className="mx-auto max-w-7xl px-6 md:px-2 lg:px-2">
+    <section className="w-full bg-black px-6 py-20 text-white">
+      <div className="mx-auto max-w-7xl">
         
         {/* Grid Layout: Desktop (2 cols), Mobile (1 col) */}
-        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-24" id="service">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-2 xl:gap-12" id="service">
           
           {/* LEFT SIDE: BOUNCY BLOCKS */}
           <motion.div 
@@ -47,14 +47,14 @@ export default function SectionOne() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative h-[500px] w-full lg:h-[600px]"
+            className="relative w-full"
           >
             <BouncyCards />
           </motion.div>
 
 
           {/* RIGHT SIDE: CONTENT & ACCORDION */}
-          <div className="flex flex-col justify-center mt-12 md:mt-0 lg:mt-0">
+          <div className="flex flex-col justify-center">
             
             {/* Badge */}
             <motion.div 
@@ -72,7 +72,7 @@ export default function SectionOne() {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ delay: 0.2 }}
-               className="mb-6 md:mb-12 text-4xl font-display font-semibold leading-tight md:text-5xl"
+               className="mb-6 md:mb-12 text-3xl font-display font-semibold leading-tight lg:text-5xl"
             >
               End-to-end Software <br />
               Development.
@@ -90,7 +90,7 @@ export default function SectionOne() {
                     className="flex w-full items-center justify-between py-2 text-left group"
                   >
                     <span className={cn(
-                        "text-xl font-medium transition-colors md:text-2xl",
+                        "text-xl font-medium transition-colors lg:text-2xl",
                         activeIndex === index ? "text-white" : "text-zinc-500 group-hover:text-zinc-300"
                     )}>
                       {item.title}

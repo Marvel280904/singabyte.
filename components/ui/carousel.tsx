@@ -147,10 +147,6 @@ export default function InfiniteCarousel({ items, onSelect, selectedId }: Carous
   return (
     // Tambahkan ref ke container utama untuk deteksi Click Outside
     <div ref={containerRef} className="relative w-full py-2 md:py-10 group">
-      
-      {/* Gradient Fade - Desktop Only */}
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-black to-transparent hidden md:block" />
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 bg-gradient-to-l from-black to-transparent hidden md:block" />
 
       {/* Track */}
       <div
@@ -194,7 +190,7 @@ function ProjectCard({
             "relative shrink-0 w-[330px] md:w-[550px] h-[230px] md:h-[400px] bg-black border transition-all duration-500 group/card cursor-pointer flex flex-col",
             isSelected 
                 ? "border-blue z-20 shadow-blue-neon scale-100" 
-                : "border-zinc-800 opacity-70 hover:opacity-100 hover:border-zinc-600 hover:shadow-[0_0_40px_-10px_rgba(0,64,255,0.4)]"
+                : "border-zinc-800 opacity-100 hover:border-zinc-600 hover:shadow-[0_0_40px_-10px_rgba(0,64,255,0.4)]"
         )}
     >
       

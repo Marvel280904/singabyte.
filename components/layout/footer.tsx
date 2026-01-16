@@ -30,28 +30,30 @@ export default function Footer() {
       <div className="px-6 lg:px-8">
         
         {/* TOP SECTION (Logo & CTA Buttons) */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-6 mb-6 border-b border-blue/20">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 pb-6 mb-6 border-b border-blue/20">
             {/* Logo */}
             <div className="text-3xl font-bold font-display text-white tracking-tighter">
               singabyte<span className="text-blue">.</span>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                <Button variant="primary" onClick={() => router.push('/contact')}>
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <Button variant="primary" className="px-3 md:px-3"
+                onClick={() => router.push('/contact')}>
                     start a project
                 </Button>
-                <Button variant="secondary" onClick={() => router.push('/career')}>
+                <Button variant="secondary" className="px-3 md:px-3"
+                    onClick={() => router.push('/career')}>
                     careers@singabyte.com
                 </Button>     
             </div>
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 xl:grid-cols-12 gap-16 xl:gap-24 mb-24">
             
             {/* LEFT SIDE: Headline & Form */}
-            <div className="lg:col-span-8 flex flex-col gap-8">
+            <div className="xl:col-span-8 lg:col-span-7 flex flex-col gap-8">
                 <div>
                     <h2 className="text-2xl md:text-3xl font-display font-medium text-white leading-[1.1] mb-2 max-w-2xl">
                         Merging your insights with our engineering to build solutions that perform.
@@ -73,8 +75,8 @@ export default function Footer() {
             </div>
 
             {/* RIGHT SIDE: Navigation Columns */}
-            <div className="lg:col-span-4">
-                <div className="grid grid-cols-3 gap-2 md:gap-8">
+            <div className="xl:col-span-4 lg:col-span-5">
+                <div className="grid grid-cols-3 gap-2 xl:gap-6">
                     
                     {/* Column 1: Company */}
                     <div className="flex flex-col gap-6">
@@ -120,9 +122,9 @@ export default function Footer() {
                         </span>
                         <div className="flex flex-col gap-4 text-sm text-zinc-300">
                             <p>Singapore</p>
-                            <Link href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors">
+                            <a href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors">
                                 dev@singabyte.com
-                            </Link>
+                            </a>
                         </div>
                     </div>
 

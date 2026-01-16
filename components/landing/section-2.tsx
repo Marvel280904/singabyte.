@@ -154,11 +154,11 @@ export default function SectionTwo() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-1 lg:grid-cols-12 lg:gap-12 items-center h-auto lg:h-[600px]"
+            className="grid grid-cols-1 xl:grid-cols-12 xl:gap-12 items-center h-auto xl:h-[600px]"
         >
             
             {/* Left Side: Details Panel */}
-            <div className="lg:col-span-4 h-full relative flex items-center order-2 lg:order-1 pl-4 md:pl-0">
+            <div className="xl:col-span-4 h-full relative flex items-center order-2 xl:order-1 pl-4 xl:pl-0">
                 <AnimatePresence mode="wait">
                     {selectedProject ? (
                         <motion.div
@@ -229,10 +229,9 @@ export default function SectionTwo() {
             </div>
 
             {/* Right Side: Carousel */}
-            <div className="lg:col-span-8 w-full h-full overflow-hidden mx-auto flex items-center order-1 lg:order-2 min-h-[400px]">
-                {/* Gradient Fade - Mobile Only */}
-                <div className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 h-full w-12 bg-gradient-to-r from-black to-transparent block md:hidden" />
-                <div className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 h-full w-12 bg-gradient-to-l from-black to-transparent block md:hidden" />
+            <div className="xl:col-span-8 w-full h-full overflow-hidden mx-auto flex items-center order-1 xl:order-2 min-h-[400px]">
+                <div className="absolute left-0 top-0 bottom-0 z-10 w-10 bg-gradient-to-r from-black via-black/80 to-transparent" />
+                <div className="absolute right-0 top-0 bottom-0 z-10 w-10 lg:w-16 bg-gradient-to-l from-black via-black/80 to-transparent" />
                 
                 <InfiniteCarousel 
                     items={projects} 
@@ -249,7 +248,7 @@ export default function SectionTwo() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-12 md:mt-0 flex justify-center"
+            className="mt-12 xl:mt-0 flex justify-center"
         >
              <Button variant="primary">
                 view all projects

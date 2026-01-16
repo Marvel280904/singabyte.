@@ -42,7 +42,7 @@ export default function SectionFive() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* GRID LAYOUT (2 Kolom) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-20">
             
             {/* LEFT SIDE: HEADER (Sticky) */}
             <div className="lg:col-span-5">
@@ -66,10 +66,9 @@ export default function SectionFive() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1] mb-6"
+                        className="text-4xl md:text-5xl font-display font-bold text-white leading-[1.1] mb-3 lg:mb-6"
                     >
-                        Answers to <br /> 
-                        your queries.
+                        Answers to your queries.
                     </motion.h2>
 
                     {/* Subtitle */}
@@ -78,7 +77,7 @@ export default function SectionFive() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-zinc-400 text-lg leading-relaxed mb-6 max-w-sm"
+                        className="text-zinc-400 text-lg leading-relaxed mb-6 max-w-md"
                     >
                         Have questions? Our FAQ section has you covered with quick answers to the most common inquiries.
                     </motion.p>
@@ -118,7 +117,7 @@ export default function SectionFive() {
                                         transition={{ duration: 0.3 }}
                                     >
                                         {activeIndex === index ? (
-                                            <Minus className="h-6 w-6 text-purple" /> 
+                                            <Minus className="h-6 w-6 text-blue" /> 
                                         ) : (
                                             <Plus className="h-6 w-6 text-zinc-600 group-hover:text-white transition-colors" />
                                         )}

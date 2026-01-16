@@ -34,7 +34,7 @@ export default function RootLayout({
           ${funnelDisplay.variable} 
           antialiased 
         `}>
-      <body>
+      <body className="bg-black text-white overflow-x-hidden w-full relative">
         <Header />
         
         {children}

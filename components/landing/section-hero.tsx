@@ -8,10 +8,10 @@ export default function SectionHero() {
   const router = useRouter();
 
   return (
-    <section className="relative h-screen min-h-[700px] w-full overflow-hidden bg-black text-white">
+    <section className="relative w-full h-[90dvh] min-h-[600px] overflow-hidden bg-black text-white">
       
       {/* BACKGROUND VIDEO */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         <video
           autoPlay
           loop
@@ -23,17 +23,14 @@ export default function SectionHero() {
         </video>
         
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black" />
+        <div className="absolute -inset-1 bg-gradient-to-b from-black/40 via-black/20 to-black z-10" />
       </div>
 
       
       
       {/* MAIN CONTENT */}
-      <div className="relative z-20 flex h-full flex-col justify-end px-6 pt-32 md:px-12 md:pb-16 lg:px-16">
-        <div className="flex h-full flex-col">
-            
-            {/* Spacer agar text tidak terlalu atas */}
-            <div className="h-40 md:h-32"></div>
+      <div className="absolute inset-0 z-20 flex h-full w-full flex-col px-6 md:px-12 lg:px-16 pb-12 md:pb-16">
+        <div className="flex flex-grow flex-col justify-end">
 
             {/* Title */}
             <div className="mb-0 md:mb-2 max-w-4xl">
@@ -50,7 +47,7 @@ export default function SectionHero() {
             </div>
 
             {/* Bottom Content (Buttons & Description) */}
-            <div className="flex flex-col-reverse gap-8 border-t border-white/10 pt-8 md:flex-row md:items-end md:justify-between md:border-none md:pt-0">
+            <div className="flex flex-col-reverse pt-3 lg:flex-row lg:items-end lg:justify-between lg:border-none lg:pt-0">
                 
                 {/* Bottom Left: Buttons */}
                 <motion.div 
@@ -72,7 +69,7 @@ export default function SectionHero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                    className="max-w-md text-base leading-relaxed text-zinc-300 md:text-right md:text-lg"
+                    className="max-w-md text-base leading-relaxed text-zinc-300 pb-4 lg:pb-0 lg:text-right md:text-lg"
                 >
                     <p>
                         Singabyte is a Singapore-based software house
