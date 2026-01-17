@@ -11,7 +11,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         type={type}
         className={cn(
           // Base Styles
-          "flex h-10 w-full rounded-none border border-zinc-800 bg-zinc-950 px-3 py-2 text-sm text-white shadow-sm transition-colors",
+          "flex h-10 w-full rounded-none border border-blue/30 bg-zinc-950/50 px-3 py-2 text-sm text-white shadow-sm transition-colors",
           
           // File Input Styles (Standard Practice)
           "file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-zinc-50",

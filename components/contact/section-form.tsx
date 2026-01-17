@@ -147,7 +147,7 @@ export default function SectionForm() {
                         <Input 
                             required
                             placeholder="ex. John"
-                            className="h-12 mt-1 border-blue/30 focus-visible:border-blue bg-zinc-950/50"
+                            className="h-12 mt-1"
                             onChange={(e) => setFormData({...formData, firstName: e.target.value})}
                         />
                     </div>
@@ -156,7 +156,7 @@ export default function SectionForm() {
                         <Input 
                             required
                             placeholder="ex. Doe"
-                            className="h-12 mt-1 border-blue/30 focus-visible:border-blue bg-zinc-950/50"
+                            className="h-12 mt-1"
                             onChange={(e) => setFormData({...formData, lastName: e.target.value})}
                         />
                     </div>
@@ -170,7 +170,7 @@ export default function SectionForm() {
                             required
                             type="email"
                             placeholder="john@company.com"
-                            className="h-12 mt-1 border-blue/30 focus-visible:border-blue bg-zinc-950/50"
+                            className="h-12 mt-1"
                             onChange={(e) => setFormData({...formData, email: e.target.value})}
                         />
                     </div>

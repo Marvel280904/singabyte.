@@ -25,7 +25,7 @@ const techStackData = [
     description: "Capture the mobile-first market with apps that feel natural on both iOS and Android. We use cross-platform technologies to reduce development time without sacrificing performance or user experience.",
     icon: <Smartphone className="w-6 h-6" />,
     techs: ["React Native", "Swift", "Kotlin"],
-    techIcons: ["/icons/react-native.png", "/icons/swift.png", "/icons/kotlin.png"],
+    techIcons: ["/icons/react.png", "/icons/swift.png", "/icons/kotlin.png"],
   },
   {
     title: "AI & Machine Learning",
@@ -139,7 +139,7 @@ const SectionTech = () => {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "110%"]);
 
   return (
-    <section className="bg-black text-white py-20 overflow-hidden" ref={containerRef}>
+    <section className="bg-black text-white py-20 mt-16 overflow-hidden" ref={containerRef}>
       
       {/* --- Top Hero Banner --- */}
       <div className="container mx-auto px-6 mb-20 text-center relative z-10">
