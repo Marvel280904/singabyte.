@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { Search } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { jobsData } from "@/config/jobs-data";
 import JobCard from "@/components/ui/job-card";
 import Pagination from "@/components/ui/pagination";
@@ -70,45 +71,86 @@ const SectionJobs = () => {
     setCurrentPage(1);
   };
 
+  // --- Animation Variants ---
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Stagger effect untuk card
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, scale: 0.95 },
+  };
+
   return (
     <div className="bg-black text-white min-h-screen">
       
-      {/* 1. HERO SECTION (Video Background) */}
+      {/* HERO SECTION */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        {/* Image  Background */}
+        {/* Image Background */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/tes.jpeg" 
-            alt="Career at Singabyte"
-            fill
-            priority
-            className="object-cover opacity-100"
-          />
-
-          {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-black/30 bg-gradient-to-t from-black via-transparent to-black/40" />
+          <motion.div
+            initial={{ scale: 1.1, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/images/banner.png" 
+              alt="Career at Singabyte"
+              fill
+              priority
+              className="object-cover opacity-90"
+            />
+            {/* Overlay Gradient */}
+            <div className="absolute inset-0 bg-black/30 bg-gradient-to-t from-black via-transparent to-black/40" />
+          </motion.div>
         </div>
 
         {/* Hero Content */}
         <div className="container mx-auto px-6 relative z-10 text-center">
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight leading-tight">
-              build what's next <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
-                with singabyte
-              </span>
-            </h1>
-            <p className="text-zinc-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight leading-tight">
+                build what's next <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">
+                  with singabyte
+                </span>
+              </h1>
+            </motion.div>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-zinc-300 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed font-light"
+            >
               Join Singabyte, where we turn complex problems into elegant software solutions. 
               We are looking for builders, thinkers, and innovators.
-            </p>
+            </motion.p>
         </div>
       </section>
 
-      {/* 2. MAIN CONTENT (Filters & List) */}
-      <section className="py-20 container mx-auto px-6" id="open-positions">
+      {/* MAIN CONTENT */}
+      <section className="py-2 lg:py-20 container mx-auto px-6" id="open-positions">
         
         {/* Header & Filters */}
-        <div className="flex flex-col lg:flex-row justify-between items-start md:items-center mb-12 gap-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col lg:flex-row justify-between items-start md:items-center mb-12 gap-6"
+        >
           <h2 className="text-3xl md:text-4xl font-display font-bold">
             Open Positions
           </h2>
@@ -145,18 +187,39 @@ const SectionJobs = () => {
             </form>
 
           </div>
-        </div>
+        </motion.div>
 
-        {/* 3. JOBS GRID */}
+        {/* JOBS GRID */}
         {currentJobs.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {currentJobs.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
-          </div>
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
+              {currentJobs.map((job) => (
+                <motion.div
+                  key={job.id}
+                  layout
+                  variants={itemVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  transition={{ duration: 0.3 }}
+                >
+                  <JobCard job={job} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         ) : (
           /* Empty State */
-          <div className="py-20 text-center border border-zinc-800 border-dashed rounded-lg bg-zinc-900/30">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="py-20 text-center border border-zinc-800 border-dashed rounded-lg bg-zinc-900/30"
+          >
             <h3 className="text-xl font-bold text-zinc-400 mb-2">No positions found</h3>
             <p className="text-zinc-600">Try adjusting your search or filters.</p>
             <button 
@@ -165,15 +228,21 @@ const SectionJobs = () => {
             >
                 Clear all filters
             </button>
-          </div>
+          </motion.div>
         )}
 
-        {/* 4. PAGINATION */}
-        <Pagination 
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={setCurrentPage}
-        />
+        {/* PAGINATION */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <Pagination 
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+          />
+        </motion.div>
 
       </section>
     </div>
