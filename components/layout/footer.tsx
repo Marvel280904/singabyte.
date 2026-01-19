@@ -15,8 +15,8 @@ const companyLinks = [
 ];
 
 const socialLinks = [
-  { name: "Twitter", href: "https://twitter.com/singabyte" },
-  { name: "Instagram", href: "https://instagram.com/singabyte" },
+//   { name: "Twitter", href: "https://twitter.com/singabyte" },
+//   { name: "Instagram", href: "https://instagram.com/singabyte" },
   { name: "LinkedIn", href: "https://linkedin.com/company/singabyte" },
 ];
 
@@ -44,7 +44,7 @@ export default function Footer() {
                 </Button>
                 <Button variant="secondary" className="px-3 md:px-3"
                     onClick={() => router.push('/career')}>
-                    careers@singabyte.com
+                    careers@singabyte.
                 </Button>     
             </div>
         </div>
@@ -123,7 +123,7 @@ export default function Footer() {
                         <div className="flex flex-col gap-4 text-sm text-zinc-300">
                             <p>Singapore</p>
                             <a href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors">
-                                dev@singabyte.com
+                                dev@singabyte.
                             </a>
                         </div>
                     </div>

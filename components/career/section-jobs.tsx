@@ -77,7 +77,7 @@ const SectionJobs = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // Stagger effect untuk card
+        staggerChildren: 0.1,
       },
     },
   };
@@ -89,7 +89,7 @@ const SectionJobs = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-black text-white min-h-screen overflow-hidden">
       
       {/* HERO SECTION */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
@@ -195,9 +195,10 @@ const SectionJobs = () => {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="wait">
               {currentJobs.map((job) => (
                 <motion.div
                   key={job.id}

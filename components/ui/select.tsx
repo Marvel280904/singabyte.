@@ -12,15 +12,16 @@ export interface SelectOption {
 
 interface SelectProps {
   options: SelectOption[];
+  value?: string;
   placeholder?: string;
   onChange?: (value: string) => void;
   className?: string;
 }
 
-export function Select({ options, placeholder = "Select option", onChange, className }: SelectProps) {
+export function Select({ options, value, placeholder = "Select option", onChange, className }: SelectProps) {
   const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<SelectOption | null>(null);
   const containerRef = React.useRef<HTMLDivElement>(null);
+  const selected = options.find((opt) => opt.value === value);
 
   // Logic: Close dropdown when clicking outside
   React.useEffect(() => {
@@ -34,7 +35,6 @@ export function Select({ options, placeholder = "Select option", onChange, class
   }, []);
 
   const handleSelect = (option: SelectOption) => {
-    setSelected(option);
     setIsOpen(false);
     if (onChange) onChange(option.value);
   };

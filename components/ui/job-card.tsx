@@ -39,14 +39,14 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 
       {/* Button */}
       <div className="mt-auto">
-        <Button  
-          variant="primary" 
-          className="w-full font-bold"
-        >
-          <Link href={job.link}>
+        <Link href={job.link}>
+          <Button  
+            variant="primary" 
+            className="w-full font-bold"
+          >
             apply now
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     </div>
   );

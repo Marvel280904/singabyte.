@@ -35,7 +35,7 @@ export default function SectionOne() {
   };
 
   return (
-    <section className="w-full bg-black px-6 py-20 text-white">
+    <section className="w-full bg-black px-6 py-20 pt-32 text-white">
       <div className="mx-auto max-w-7xl">
         
         {/* Grid Layout: Desktop (2 cols), Mobile (1 col) */}
