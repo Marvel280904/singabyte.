@@ -9,7 +9,7 @@ import { Project } from "@/components/ui/carousel";
 export default function SectionProjects() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Mengambil data scroll dari container referensi
+  // Mengambil data scroll dari container
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -56,7 +56,7 @@ export default function SectionProjects() {
   );
 }
 
-// --- SUB COMPONENTS ---
+// --- SUB COMPONENTS (INTRO) ---
 
 function IntroSign({ scrollProgress }: { scrollProgress: MotionValue<number> }) {
   // Fade out lebih cepat (0 - 5% scroll sudah hilang)
@@ -107,7 +107,7 @@ function ProjectSlide({
   const xLeft = useTransform(progress, [entryStart, entryEnd], ["-100%", "0%"]);
   const xRight = useTransform(progress, [entryStart, entryEnd], ["100%", "0%"]);
 
-  // 1. LOGIC MENENTUKAN WARNA BACKGROUND BERDASARKAN PATTERN
+  // LOGIC MENENTUKAN WARNA BACKGROUND BERDASARKAN PATTERN
   const getBgClass = () => {
       switch (pattern) {
         case 'center': return 'bg-white';
@@ -122,7 +122,7 @@ function ProjectSlide({
   const isLightBg = pattern === 'center';
   const isGreyBg = pattern === 'bottom';
 
-  // 2. LOGIC ANIMASI STYLE
+  // LOGIC ANIMASI STYLE
   const getMotionStyle = () => {
       const baseStyle = { zIndex: index + 10 };
 
@@ -147,42 +147,30 @@ function ProjectSlide({
       style={getMotionStyle()}
       className={`absolute inset-0 h-full w-full ${getBgClass()} flex items-center justify-center overflow-hidden`}
     >
-        {/* CONTAINER UTAMA: GRID LAYOUT 
-            - Max-width dibatasi agar rapi
-            - Padding responsif
-            - Di Mobile: Flex Column (atas bawah)
-            - Di Desktop: Grid 2 Kolom (kiri kanan)
-        */}
+        {/* CONTAINER UTAMA: GRID LAYOUT */}
         <div className="w-full h-full max-w-[1400px] px-6 pt-16 md:pt-12 xl:p-20 mx-auto flex flex-col xl:grid xl:grid-cols-12 gap-8 lg:gap-12 items-center justify-center">
 
-            {/* --- AREA GAMBAR (Showcase) --- 
-                Di Desktop ambil 7 kolom (lebih lebar).
-                Order-1 di mobile (gambar duluan), Order-2 di desktop (opsional, disini default).
-            */}
-            <div className="w-full xl:col-span-7 h-[40vh] md:h-[50vh] xl:h-[70vh] relative flex items-center justify-center">
+            {/* Image Area */}
+            <div className="w-full xl:col-span-7 h-[30vh] md:h-[40vh] xl:h-[60vh] relative flex items-center justify-center">
                 
-                {/* Frame/Background Image: Memberikan kesan "Window" atau "Canvas" */}
+                {/* Frame/Background Image: "Window" / "Canvas" */}
                 <div className="relative w-full h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 md:p-6 flex items-center justify-center group">
                     
                     {/* Efek Glow di belakang gambar (Opsional) */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
                     <Image
                         src={project.image}
                         alt={project.title}
                         width={1400}
                         height={900}
-                        // Object Contain: Gambar utuh 100%
-                        // Max-h/w: Membatasi agar tidak keluar frame
                         className="object-contain w-full h-full max-h-full max-w-full drop-shadow-2xl transition-transform duration-700 ease-out group-hover:scale-105"
                         priority
                     />
                 </div>
             </div>
 
-            {/* --- AREA DETAIL & STATS --- 
-                Di Desktop ambil 5 kolom.
-            */}
+            {/* Details Area */}
             <div className={`w-full xl:col-span-5 flex flex-col justify-center space-y-6 md:space-y-8 ${isLightBg ? 'text-zinc-900' : 'text-white'}`}>
                 
                 {/* Header Text */}
