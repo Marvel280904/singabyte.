@@ -30,19 +30,19 @@ const staggerContainer: Variants = {
 export default function SectionTwo() {
   const router = useRouter();
   // State untuk generate bintang secara random
-  const [stars, setStars] = useState<{ top: string; left: string; delay: string; size: string; opacity: number }[]>([]);
+    //   const [stars, setStars] = useState<{ top: string; left: string; delay: string; size: string; opacity: number }[]>([]);
 
-  useEffect(() => {
-    // Generate 40 bintang random
-    const newStars = Array.from({ length: 40 }).map(() => ({
-      top: `${Math.random() * 100}%`,
-      left: `${Math.random() * 100}%`,
-      delay: `delay-${[75, 100, 150, 200, 300, 500, 700, 1000][Math.floor(Math.random() * 8)]}`,
-      size: Math.random() > 0.5 ? 'h-1 w-1' : 'h-0.5 w-0.5',
-      opacity: Math.random() * 0.7 + 0.3
-    }));
-    setStars(newStars);
-  }, []);
+    //   useEffect(() => {
+    //     // Generate 40 bintang random
+    //     const newStars = Array.from({ length: 40 }).map(() => ({
+    //       top: `${Math.random() * 100}%`,
+    //       left: `${Math.random() * 100}%`,
+    //       delay: `delay-${[75, 100, 150, 200, 300, 500, 700, 1000][Math.floor(Math.random() * 8)]}`,
+    //       size: Math.random() > 0.5 ? 'h-1 w-1' : 'h-0.5 w-0.5',
+    //       opacity: Math.random() * 0.7 + 0.3
+    //     }));
+    //     setStars(newStars);
+    //   }, []);
 
   return (
     <section className="w-full bg-black py-20 overflow-hidden min-h-[700px] lg:min-h-[900px] flex flex-col justify-center" id="work">
@@ -53,7 +53,7 @@ export default function SectionTwo() {
       </div>
 
       {/* Shining Stars / Dots (Generated Randomly) */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
+      {/* <div className="absolute inset-0 z-0 pointer-events-none">
         {stars.map((star, i) => (
             <div
                 key={i}
@@ -64,7 +64,7 @@ export default function SectionTwo() {
                 }}
             />
         ))}
-      </div>
+      </div> */}
 
       <div className="relative z-10 w-full">
         

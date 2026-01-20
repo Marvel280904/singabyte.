@@ -111,13 +111,16 @@ function ProjectSlide({
   const getBgClass = () => {
       switch (pattern) {
         case 'center': return 'bg-white';
-        case 'bottom': return 'bg-zinc-300';
-        case 'top':    return 'bg-zinc-500';
+        case 'bottom': return 'bg-zinc-500';
+        case 'top':    return 'bg-blue-800';
         case 'left':   return 'bg-zinc-700';
         case 'right':  return 'bg-black';
         default:       return 'bg-black';
       }
   };
+
+  const isLightBg = pattern === 'center';
+  const isGreyBg = pattern === 'bottom';
 
   // 2. LOGIC ANIMASI STYLE
   const getMotionStyle = () => {
@@ -140,76 +143,99 @@ function ProjectSlide({
   };
 
   return (
-    // DIV HITAM (DYNAMIC COLOR) FULL SCREEN
     <motion.div
       style={getMotionStyle()}
-      // getBgClass() agar bg dynamic
-      className={`absolute inset-0 h-full w-full ${getBgClass()} flex items-end justify-center p-4 md:p-6`}
+      className={`absolute inset-0 h-full w-full ${getBgClass()} flex items-center justify-center overflow-hidden`}
     >
-        
-        {/* DIV KARTU */}
-        <div className="relative w-full max-w-[1400px] h-[85vh] md:h-[80vh] rounded-[2rem] overflow-hidden shadow-2xl flex flex-col xl:flex-row group">
+        {/* CONTAINER UTAMA: GRID LAYOUT 
+            - Max-width dibatasi agar rapi
+            - Padding responsif
+            - Di Mobile: Flex Column (atas bawah)
+            - Di Desktop: Grid 2 Kolom (kiri kanan)
+        */}
+        <div className="w-full h-full max-w-[1400px] px-6 pt-16 md:pt-12 xl:p-20 mx-auto flex flex-col xl:grid xl:grid-cols-12 gap-8 lg:gap-12 items-center justify-center">
 
-            {/* BAGIAN KIRI: GAMBAR */}
-            <div className="relative w-full xl:w-2/3 h-[60vh] xl:h-full overflow-hidden">
-                <div className="absolute inset-0 z-10 pointer-events-none" />
-                <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                    priority
-                />
+            {/* --- AREA GAMBAR (Showcase) --- 
+                Di Desktop ambil 7 kolom (lebih lebar).
+                Order-1 di mobile (gambar duluan), Order-2 di desktop (opsional, disini default).
+            */}
+            <div className="w-full xl:col-span-7 h-[40vh] md:h-[50vh] xl:h-[70vh] relative flex items-center justify-center">
+                
+                {/* Frame/Background Image: Memberikan kesan "Window" atau "Canvas" */}
+                <div className="relative w-full h-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-4 md:p-6 flex items-center justify-center group">
+                    
+                    {/* Efek Glow di belakang gambar (Opsional) */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+                    <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={1400}
+                        height={900}
+                        // Object Contain: Gambar utuh 100%
+                        // Max-h/w: Membatasi agar tidak keluar frame
+                        className="object-contain w-full h-full max-h-full max-w-full drop-shadow-2xl transition-transform duration-700 ease-out group-hover:scale-105"
+                        priority
+                    />
+                </div>
             </div>
 
-            {/* BAGIAN KANAN: DETAIL & STATS */}
-            <div className="w-full xl:w-1/3 h-[40vh] xl:h-full bg-zinc-950 p-6 md:p-10 lg:p-12 flex flex-col justify-center border-l border-white/5 z-10">
-                <div className="relative space-y-6">
-                    <div>
-                        <span className="text-blue-400 text-xs uppercase tracking-widest mb-2 block">
-                            [ {project.category} ]
-                        </span>
-                        <h3 className="text-3xl md:text-5xl font-display font-semibold text-white leading-tight mb-4">
-                            {project.title}
-                        </h3>
-                        <p className="text-zinc-400 text-sm md:text-base leading-relaxed">
-                            {project.description}
-                        </p>
-                    </div>
+            {/* --- AREA DETAIL & STATS --- 
+                Di Desktop ambil 5 kolom.
+            */}
+            <div className={`w-full xl:col-span-5 flex flex-col justify-center space-y-6 md:space-y-8 ${isLightBg ? 'text-zinc-900' : 'text-white'}`}>
+                
+                {/* Header Text */}
+                <div className="space-y-4 text-center xl:text-left">
+                    <span className="text-blue-400 text-xs font-bold uppercase tracking-widest mb-2 block">
+                      [ {project.category} ]
+                    </span>
+                    
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight">
+                        {project.title}
+                    </h3>
+                    
+                    <p className={`text-sm md:text-base leading-relaxed ${
+                      isLightBg 
+                        ? 'text-zinc-600'        
+                        : isGreyBg 
+                        ? 'text-zinc-300'        
+                        : 'text-zinc-400'        
+                      } max-w-xl mx-auto xl:mx-0`}>
+                        {project.description}
+                    </p>
+                </div>
 
-                    {/* STATS GRID */}
-                    <div className="pt-4 xl:pt-8 mt-auto border-t border-white/10">
-                        <div className="grid grid-cols-3 gap-y-6 gap-x-4 text-center justify-items-center">
-                            {project.stats && project.stats.length > 0 ? (
-                                project.stats.map((stat, i) => (
-                                    <div key={i}>
-                                        <h4 className="text-zinc-500 text-[10px] md:text-xs uppercase tracking-widest mb-1 font-mono">
-                                            {stat.label}
-                                        </h4>
-                                        <p className="text-white text-sm md:text-base font-medium">
-                                            {stat.value}
-                                        </p>
-                                    </div>
-                                ))
-                            ) : (
-                                <>
-                                    <div>
-                                        <h4 className="text-zinc-500 text-xs uppercase tracking-widest mb-1">Year</h4>
-                                        <p className="text-white">2024</p>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-zinc-500 text-xs uppercase tracking-widest mb-1">Status</h4>
-                                        <p className="text-white">Completed</p>
-                                    </div>
-                                </>
-                            )}
-                        </div>
-                    </div>
+                {/* Stats / Info Grid */}
+                <div className={`grid grid-cols-3 gap-4 md:gap-6 pt-6 md:pt-8 border-t ${isLightBg ? 'border-zinc-400' : 'border-white/30'}`}>
+                    {project.stats && project.stats.length > 0 ? (
+                        project.stats.map((stat, i) => (
+                            <div key={i} className="text-center">
+                                <h4 className={`text-[10px] md:text-xs uppercase tracking-widest mb-1 font-mono ${isGreyBg ? 'text-zinc-300' : 'text-zinc-400'}`}>
+                                    {stat.label}
+                                </h4>
+                                <p className="text-sm md:text-lg font-medium">
+                                    {stat.value}
+                                </p>
+                            </div>
+                        ))
+                    ) : (
+                        // Default stats jika tidak ada data
+                        <>
+                            <div className="text-center lg:text-left">
+                                <h4 className="text-zinc-500 text-[10px] uppercase tracking-widest mb-1">Year</h4>
+                                <p className="font-medium">2024</p>
+                            </div>
+                            <div className="text-center lg:text-left">
+                                <h4 className="text-zinc-500 text-[10px] uppercase tracking-widest mb-1">Role</h4>
+                                <p className="font-medium">Full Stack</p>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
 
         </div>
-
     </motion.div>
   );
 }

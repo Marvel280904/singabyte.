@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     title: "Renotake Web App",
     category: "Website Application",
     description: "An AI-powered platform designed to empower homeowners with accurate renovation cost estimates and intelligent budget planning. It streamlines the home improvement journey by analyzing project requirements to provide transparent financial projections.",
-    image: "/images/project-1.png", 
+    image: "/images/b5.png", 
     stats: [
         { label: "Timeline", value: "Ongoing" },
         { label: "Role", value: "Full Stack" },

@@ -64,7 +64,6 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
       {/* Track */}
       <div
         ref={scrollerRef}
-        // Hapus cursor-grab, event listener mouse/touch, dan logic hover
         className="flex w-full overflow-x-hidden no-scrollbar gap-6 px-10 py-8 pointer-events-none select-none"
       >
         {infiniteItems.map((project, index) => (
@@ -80,16 +79,14 @@ export default function InfiniteCarousel({ items }: CarouselProps) {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    // Hapus onClick, cursor-pointer, dan hover effects yang interaktif
     <div 
         className={cn(
             "relative shrink-0 w-[330px] md:w-[550px] h-[230px] md:h-[400px] bg-black flex flex-col transition-all duration-500",
-            // Tetap berikan sedikit shadow statis agar terlihat bagus, tapi tanpa hover interaction
             "opacity-100" 
         )}
     >
       
-      {/* FRAME VISUAL - Tetap ada untuk estetika */}
+      {/* FRAME */}
       <div className="absolute inset-0 z-20 pointer-events-none">
         <div className="absolute top-0 left-0 h-4 w-4 border-l-2 border-t-2 border-blue" />
         <div className="absolute right-0 top-0 h-4 w-4 border-r-2 border-t-2 border-blue" />
@@ -104,7 +101,7 @@ function ProjectCard({ project }: { project: Project }) {
                 src={project.image}
                 alt={project.title}
                 fill
-                className="object-cover"
+                className="object-contain"
             />
         </div>
 
