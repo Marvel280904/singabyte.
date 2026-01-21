@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 
 interface JobCardProps {
   job: Job;
+  onClick: () => void;
 }
 
-const JobCard: React.FC<JobCardProps> = ({ job }) => {
+const JobCard: React.FC<JobCardProps> = ({ job, onClick }) => {
   return (
     <div className="group flex flex-col p-6 bg-zinc-900/50 border border-zinc-800 hover:border-blue-600/50 hover:shadow-blue-neon/20 transition-all duration-300 rounded-lg h-full">
       {/* Header */}
@@ -39,14 +40,13 @@ const JobCard: React.FC<JobCardProps> = ({ job }) => {
 
       {/* Button */}
       <div className="mt-auto">
-        <Link href={job.link}>
           <Button  
             variant="primary" 
             className="w-full font-bold"
+            onClick={onClick}
           >
-            apply now
+            view details
           </Button>
-        </Link>
       </div>
     </div>
   );

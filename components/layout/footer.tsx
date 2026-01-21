@@ -136,10 +136,10 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-md text-white">
             <p>© {currentYear} Singabyte. All rights reserved.</p>
             <div className="flex gap-8">
-                <Link href="#" className="hover:text-blue transition-colors">
+                <Link href="/terms" className="hover:text-blue transition-colors">
                     Terms & Conditions
                 </Link>
-                <Link href="#" className="hover:text-blue transition-colors">
+                <Link href="/privacy-policy" className="hover:text-blue transition-colors">
                     Privacy Policy
                 </Link>
             </div>

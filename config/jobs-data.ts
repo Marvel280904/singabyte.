@@ -7,7 +7,10 @@ export interface Job {
   description: string;
   type: "Fulltime" | "Freelance" | "Internship" | "Contract";
   location: "Remote" | "On-site" | "Hybrid";
-  link: string;
+  about_role: string;
+  to_do: string[]; 
+  qualifications: string[];
+  offer: string[];
 }
 
 export const jobsData: Job[] = [
@@ -18,7 +21,25 @@ export const jobsData: Job[] = [
     description: "We are looking for a versatile developer to handle end-to-end mobile solutions.",
     type: "Fulltime",
     location: "Remote",
-    link: "mailto:dev@singabyte.com",
+    about_role: "We are looking for a versatile Senior Mobile Developer who is passionate about building high-quality mobile applications using Flutter. You will be responsible for the entire lifecycle of the application, from concept to delivery.",
+    to_do: [
+      "Design and build advanced applications for the iOS and Android platforms using Flutter.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Work on bug fixing and improving application performance.",
+      "Continuously discover, evaluate, and implement new technologies to maximize development efficiency."
+    ],
+    qualifications: [
+      "BS/MS degree in Computer Science, Engineering or a related subject.",
+      "3+ years of working experience in software development.",
+      "Have published at least one original Android/iOS app.",
+      "Experience with third-party libraries and APIs."
+    ],
+    offer: [
+      "Competitive salary range ($3000 - $5000).",
+      "Remote work flexibility.",
+      "Health insurance and annual leave.",
+      "Professional development budget."
+    ]
   },
   {
     id: "2",
@@ -27,7 +48,25 @@ export const jobsData: Job[] = [
     description: "Lead our product teams and ensure smooth delivery of complex software projects.",
     type: "Freelance",
     location: "Remote",
-    link: "mailto:dev@singabyte.com",
+    about_role: "We are looking for a versatile Senior Mobile Developer who is passionate about building high-quality mobile applications using Flutter. You will be responsible for the entire lifecycle of the application, from concept to delivery.",
+    to_do: [
+      "Design and build advanced applications for the iOS and Android platforms using Flutter.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Work on bug fixing and improving application performance.",
+      "Continuously discover, evaluate, and implement new technologies to maximize development efficiency."
+    ],
+    qualifications: [
+      "BS/MS degree in Computer Science, Engineering or a related subject.",
+      "3+ years of working experience in software development.",
+      "Have published at least one original Android/iOS app.",
+      "Experience with third-party libraries and APIs."
+    ],
+    offer: [
+      "Competitive salary range ($3000 - $5000).",
+      "Remote work flexibility.",
+      "Health insurance and annual leave.",
+      "Professional development budget."
+    ]
   },
   {
     id: "3",
@@ -36,69 +75,24 @@ export const jobsData: Job[] = [
     description: "Design intuitive, user-centered experiences that align business goals with user needs.",
     type: "Internship",
     location: "Remote",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "4",
-    title: "Backend Engineer",
-    stack: "Node.js, PostgreSQL, Docker",
-    description: "Build scalable and secure server-side architectures for high-traffic applications.",
-    type: "Fulltime",
-    location: "On-site",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "5",
-    title: "Frontend Developer",
-    stack: "React, Next.js, Tailwind",
-    description: "Craft beautiful and responsive web interfaces with modern frontend technologies.",
-    type: "Fulltime",
-    location: "Hybrid",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "6",
-    title: "DevOps Engineer",
-    stack: "AWS, CI/CD, Terraform",
-    description: "Manage our cloud infrastructure and automate deployment pipelines.",
-    type: "Contract",
-    location: "Remote",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "7",
-    title: "QA Engineer",
-    stack: "Selenium, Cypress, Manual Testing",
-    description: "Ensure the highest quality of our software through rigorous testing.",
-    type: "Fulltime",
-    location: "Remote",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "8",
-    title: "Data Analyst",
-    stack: "Python, SQL, Tableau",
-    description: "Analyze data trends to help clients make informed business decisions.",
-    type: "Fulltime",
-    location: "On-site",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "9",
-    title: "Project Manager",
-    stack: "Management, Notion, Slack",
-    description: "Coordinate between clients and dev teams to ensure project success.",
-    type: "Fulltime",
-    location: "Remote",
-    link: "mailto:dev@singabyte.com",
-  },
-  {
-    id: "10",
-    title: "Mobile Developer (iOS)",
-    stack: "Swift, SwiftUI",
-    description: "Build native iOS applications with a focus on performance and UX.",
-    type: "Fulltime",
-    location: "Hybrid",
-    link: "mailto:dev@singabyte.com",
+    about_role: "We are looking for a versatile Senior Mobile Developer who is passionate about building high-quality mobile applications using Flutter. You will be responsible for the entire lifecycle of the application, from concept to delivery.",
+    to_do: [
+      "Design and build advanced applications for the iOS and Android platforms using Flutter.",
+      "Collaborate with cross-functional teams to define, design, and ship new features.",
+      "Work on bug fixing and improving application performance.",
+      "Continuously discover, evaluate, and implement new technologies to maximize development efficiency."
+    ],
+    qualifications: [
+      "BS/MS degree in Computer Science, Engineering or a related subject.",
+      "3+ years of working experience in software development.",
+      "Have published at least one original Android/iOS app.",
+      "Experience with third-party libraries and APIs."
+    ],
+    offer: [
+      "Competitive salary range ($3000 - $5000).",
+      "Remote work flexibility.",
+      "Health insurance and annual leave.",
+      "Professional development budget."
+    ]
   },
 ];

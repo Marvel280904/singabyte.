@@ -4,7 +4,8 @@ import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { jobsData } from "@/config/jobs-data";
+import { Job, jobsData } from "@/config/jobs-data";
+import JobModal from "./job-modal";
 import JobCard from "@/components/ui/job-card";
 import Pagination from "@/components/ui/pagination";
 import { Input } from "@/components/ui/input";
@@ -34,6 +35,7 @@ const SectionJobs = () => {
   const [filterType, setFilterType] = useState("All");
   const [filterLocation, setFilterLocation] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
 
   // --- Logic Filtering ---
   const filteredJobs = useMemo(() => {
@@ -209,7 +211,7 @@ const SectionJobs = () => {
                   exit="exit"
                   transition={{ duration: 0.3 }}
                 >
-                  <JobCard job={job} />
+                  <JobCard job={job} onClick={() => setSelectedJob(job)} />
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -246,6 +248,16 @@ const SectionJobs = () => {
         </motion.div>
 
       </section>
+
+      {/* Modal Job Application */}
+      {selectedJob && (
+        <JobModal 
+            job={selectedJob} 
+            isOpen={!!selectedJob} 
+            onClose={() => setSelectedJob(null)} 
+        />
+      )}
+
     </div>
   );
 };
