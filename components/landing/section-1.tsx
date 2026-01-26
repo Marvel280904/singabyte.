@@ -103,7 +103,7 @@ export default function SectionOne() {
                       {activeIndex === index ? (
                         <Minus className="h-6 w-6 text-blue" />
                       ) : (
-                        <Plus className="h-6 w-6 text-white" />
+                        <Plus className="h-6 w-6 text-zinc-600 group-hover:text-white transition-colors" />
                       )}
                     </motion.div>
                   </button>
