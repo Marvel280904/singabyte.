@@ -88,7 +88,7 @@ export default function Footer() {
                                 <Link 
                                     key={index} 
                                     href={item.href}
-                                    className="text-zinc-300 hover:text-blue transition-colors text-sm"
+                                    className="text-zinc-300 hover:text-blue transition-colors text-sm cursor-default"
                                 >
                                     {item.name}
                                 </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
                                 <Link 
                                     key={index} 
                                     href={item.href}
-                                    className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group"
+                                    className="flex items-center gap-2 text-zinc-300 hover:text-blue transition-colors text-sm group cursor-default"
                                 >
                                     {item.name} 
                                     <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -122,7 +122,7 @@ export default function Footer() {
                         </span>
                         <div className="flex flex-col gap-4 text-sm text-zinc-300">
                             <p>Singapore</p>
-                            <a href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors">
+                            <a href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors cursor-default">
                                 dev@singabyte.
                             </a>
                         </div>

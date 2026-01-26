@@ -68,7 +68,7 @@ export default function Header() {
               </button>
 
               {/* Logo */}
-              <Link href="/" className="relative h-9 w-28 md:w-32 flex items-center">
+              <Link href="/" className="relative h-9 w-28 md:w-32 flex items-center cursor-default">
                   <div className="text-2xl md:text-3xl font-display font-bold text-white tracking-tighter">
                       singabyte<span className="text-blue">.</span>
                   </div>
@@ -82,7 +82,7 @@ export default function Header() {
                   <Link
                   key={index}
                   href={item.href}
-                  className="relative group text-md font-medium text-zinc-400 transition-colors hover:text-white"
+                  className="relative group text-md font-medium text-zinc-400 transition-colors hover:text-white cursor-default"
                   >
                       {item.name}
                       {/* Span Garis Neon */}
