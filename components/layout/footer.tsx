@@ -122,8 +122,8 @@ export default function Footer() {
                         </span>
                         <div className="flex flex-col gap-4 text-sm text-zinc-300">
                             <p>Singapore</p>
-                            <a href="mailto:dev@singabyte.com" className="hover:text-blue transition-colors cursor-default">
-                                dev@singabyte.
+                            <a href="mailto:dev@singabyte.sg" className="hover:text-blue transition-colors cursor-default">
+                                dev@singabyte.sg
                             </a>
                         </div>
                     </div>

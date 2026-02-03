@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       // set Nama Pengirim jadi Nama User, tapi emailnya tetap email server
       from: `"${firstName} ${lastName} (via Website)" <${process.env.EMAIL_USER}>`, 
       
-      to: "dev@singabyte.com",
+      to: "dev@singabyte.sg",
       
       // Saat admin klik Reply, akan ke email user
       replyTo: email, 

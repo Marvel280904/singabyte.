@@ -36,7 +36,7 @@ export async function POST(req: Request) {
     const mailOptions = {
       // From: Nama User (via Website) <Email Server>
       from: `"${name} (via Website)" <${process.env.EMAIL_USER}>`,
-      to: "dev@singabyte.com",
+      to: "dev@singabyte.sg",
       replyTo: email,
       subject: `Job Application - ${jobTitle}`,
       text: `
